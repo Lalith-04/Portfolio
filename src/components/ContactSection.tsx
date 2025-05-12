@@ -89,11 +89,11 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="min-h-screen py-20 bg-[#0B1121]">
+    <section id="contact" className="min-h-screen py-20 bg-background dark:bg-[#0B1121]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <p className="text-[#0EA5E9] text-sm font-medium tracking-wider mb-1">GET IN TOUCH</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Contact Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-white mb-4">Contact Me</h2>
           <div className="h-1 w-16 bg-[#0EA5E9] mx-auto"></div>
         </div>
 
@@ -102,29 +102,29 @@ const ContactSection = () => {
             {contactInfo.map((info, index) => (
               <div 
                 key={index}
-                className="bg-[#0F172A] p-6 rounded-xl flex items-start space-x-4 hover:shadow-[0_0_30px_rgba(14,165,233,0.1)] transition-all duration-300"
+                className="bg-card dark:bg-[#0F172A] p-6 rounded-xl flex items-start space-x-4 hover:shadow-[0_0_30px_rgba(14,165,233,0.1)] transition-all duration-300"
               >
-                <div className="p-3 bg-[#1E293B] rounded-xl text-[#0EA5E9]">
+                <div className="p-3 bg-accent dark:bg-[#1E293B] rounded-xl text-[#0EA5E9]">
                   {info.icon}
                 </div>
                 <div>
-                  <h3 className="text-white font-semibold text-lg mb-1">{info.title}</h3>
+                  <h3 className="text-foreground dark:text-white font-semibold text-lg mb-1">{info.title}</h3>
                   {info.link ? (
                     <a 
                       href={info.link}
-                      className="text-gray-400 hover:text-[#0EA5E9] transition-colors"
+                      className="text-muted-foreground dark:text-gray-400 hover:text-[#0EA5E9] transition-colors"
                     >
                       {info.value}
                     </a>
                   ) : (
-                    <p className="text-gray-400">{info.value}</p>
+                    <p className="text-muted-foreground dark:text-gray-400">{info.value}</p>
                   )}
                 </div>
               </div>
             ))}
 
-            <div className="bg-[#0F172A] p-6 rounded-xl">
-              <h3 className="text-white font-semibold text-lg mb-4">Connect With Me</h3>
+            <div className="bg-card dark:bg-[#0F172A] p-6 rounded-xl">
+              <h3 className="text-foreground dark:text-white font-semibold text-lg mb-4">Connect With Me</h3>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <a 
@@ -142,12 +142,12 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="bg-[#0F172A] p-8 rounded-xl">
-            <h3 className="text-white font-semibold text-xl mb-6">Send Me a Message</h3>
+          <div className="bg-card dark:bg-[#0F172A] p-8 rounded-xl">
+            <h3 className="text-foreground dark:text-white font-semibold text-xl mb-6">Send Me a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-gray-400 mb-2 text-sm">
+                  <label htmlFor="name" className="block text-muted-foreground dark:text-gray-400 mb-2 text-sm">
                     Name
                   </label>
                   <input
@@ -157,12 +157,12 @@ const ContactSection = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-[#1E293B] text-white border border-gray-700 focus:outline-none focus:border-[#0EA5E9] transition-colors"
+                    className="w-full px-4 py-3 rounded-lg bg-accent dark:bg-[#1E293B] text-foreground dark:text-white border border-input dark:border-gray-700 focus:outline-none focus:border-[#0EA5E9] transition-colors"
                     placeholder="Your Name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-gray-400 mb-2 text-sm">
+                  <label htmlFor="email" className="block text-muted-foreground dark:text-gray-400 mb-2 text-sm">
                     Email
                   </label>
                   <input
@@ -172,14 +172,14 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-[#1E293B] text-white border border-gray-700 focus:outline-none focus:border-[#0EA5E9] transition-colors"
+                    className="w-full px-4 py-3 rounded-lg bg-accent dark:bg-[#1E293B] text-foreground dark:text-white border border-input dark:border-gray-700 focus:outline-none focus:border-[#0EA5E9] transition-colors"
                     placeholder="your.email@example.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-gray-400 mb-2 text-sm">
+                <label htmlFor="subject" className="block text-muted-foreground dark:text-gray-400 mb-2 text-sm">
                   Subject
                 </label>
                 <input
@@ -189,13 +189,13 @@ const ContactSection = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-[#1E293B] text-white border border-gray-700 focus:outline-none focus:border-[#0EA5E9] transition-colors"
+                  className="w-full px-4 py-3 rounded-lg bg-accent dark:bg-[#1E293B] text-foreground dark:text-white border border-input dark:border-gray-700 focus:outline-none focus:border-[#0EA5E9] transition-colors"
                   placeholder="How can I help you?"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-gray-400 mb-2 text-sm">
+                <label htmlFor="message" className="block text-muted-foreground dark:text-gray-400 mb-2 text-sm">
                   Message
                 </label>
                 <textarea
@@ -205,27 +205,20 @@ const ContactSection = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-[#1E293B] text-white border border-gray-700 focus:outline-none focus:border-[#0EA5E9] transition-colors resize-none"
-                  placeholder="Your message..."
+                  className="w-full px-4 py-3 rounded-lg bg-accent dark:bg-[#1E293B] text-foreground dark:text-white border border-input dark:border-gray-700 focus:outline-none focus:border-[#0EA5E9] transition-colors resize-none"
+                  placeholder="Your message here..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 bg-[#0EA5E9] hover:bg-[#0EA5E9]/90 text-white font-semibold rounded-lg flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_20px_rgba(14,165,233,0.3)] disabled:opacity-70"
+                className={`w-full py-4 rounded-lg bg-[#0EA5E9] text-white font-medium flex items-center justify-center space-x-2 hover:bg-[#0EA5E9]/90 transition-colors ${
+                  isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
+                }`}
               >
-                {isSubmitting ? (
-                  <>
-                    <span className="inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    Send Message
-                  </>
-                )}
+                <Send className="w-5 h-5" />
+                <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
               </button>
             </form>
           </div>
