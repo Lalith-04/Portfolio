@@ -77,6 +77,14 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-5 pt-4">
               <Button 
                 size="lg"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/path/to/Resume.pdf'; // Update with the correct path to your PDF
+                  link.download = 'Resume.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
                 className="bg-[#0EA5E9] hover:bg-[#0EA5E9]/90 text-white group transition-all duration-300 hover:shadow-lg hover:shadow-[#0EA5E9]/25"
               >
                 <Download size={18} className="mr-2 transition-transform group-hover:-translate-y-1" />
